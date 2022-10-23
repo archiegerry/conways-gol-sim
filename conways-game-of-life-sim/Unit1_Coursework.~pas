@@ -1,0 +1,55 @@
+unit Unit1_Coursework;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Unit3, Unit4, Unit2, ExtCtrls, jpeg, StdCtrls;
+
+type
+  TfrmMenu = class(TForm)
+    title: TStaticText;
+    imgMenu: TImage;
+    btnStart: TButton;
+    btnSaves: TButton;
+    btnHelp: TButton;
+    btnExit: TButton;
+    procedure btnStartClick(Sender: TObject);
+    procedure btnSavesClick(Sender: TObject);
+    procedure btnHelpClick(Sender: TObject);
+    procedure btnExitClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMenu: TfrmMenu;
+
+implementation
+
+
+{$R *.dfm}
+
+procedure TfrmMenu.btnStartClick(Sender: TObject);
+begin
+ frmStart.Show;
+end;
+
+procedure TfrmMenu.btnSavesClick(Sender: TObject);
+begin
+  frmSaves.Show;
+end;
+
+procedure TfrmMenu.btnHelpClick(Sender: TObject);
+begin
+  frmHelp.Show;
+end;
+
+procedure TfrmMenu.btnExitClick(Sender: TObject);
+begin
+  application.Terminate;
+end;
+
+end.

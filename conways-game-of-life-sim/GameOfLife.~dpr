@@ -1,0 +1,19 @@
+program GameOfLife;
+
+uses
+  Forms,
+  Unit1_Coursework in 'Unit1_Coursework.pas' {frmMenu},
+  Unit2 in 'Unit2.pas' {frmSaves},
+  Unit3 in 'Unit3.pas' {frmHelp},
+  Unit4 in 'Unit4.pas' {frmStart};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFrmMenu, frmMenu);
+  Application.CreateForm(TfrmSaves, frmSaves);
+  Application.CreateForm(TfrmHelp, frmHelp);
+  Application.CreateForm(TfrmStart, frmStart);
+  Application.Run;
+end.

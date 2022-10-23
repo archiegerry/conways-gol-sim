@@ -1,0 +1,72 @@
+unit Unit4;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, Grids, StdCtrls, Buttons, ExtCtrls;
+
+type
+  TfrmStart = class(TForm)
+    trkZoom: TTrackBar;
+    zoom: TStaticText;
+    btnStep: TBitBtn;
+    btnRun: TBitBtn;
+    btnStop: TBitBtn;
+    btnReset: TBitBtn;
+    tmrMain: TTimer;
+    grdMain: TStringGrid;
+    procedure trkZoomChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnRunClick(Sender: TObject);
+    procedure btnStopClick(Sender: TObject);
+    
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmStart: TfrmStart;
+
+implementation
+
+uses Unit1_Coursework;
+
+{$R *.dfm}
+
+procedure TfrmStart.FormCreate(Sender: TObject);
+begin
+    btnRun.Enabled := true;
+    btnStop.Enabled := false;
+    btnRun.Visible := true;
+    btnStop.Visible :=false;
+end;
+
+procedure TfrmStart.trkZoomChange(Sender: TObject);
+begin
+    grdMain.DefaultColWidth := trkZoom.Position;
+    grdMain.DefaultRowHeight := trkZoom.Position;
+end;
+
+
+
+procedure TfrmStart.btnRunClick(Sender: TObject);
+begin
+    btnStop.Enabled := true;
+    btnRun.Enabled := false;
+    btnStop.Visible := true;
+    btnRun.Visible := false;
+end;
+
+procedure TfrmStart.btnStopClick(Sender: TObject);
+begin
+    btnRun.Enabled := true;
+    btnStop.Enabled := false;
+    btnRun.Visible := true;
+    btnStop.Visible := false;
+end;
+
+
+end.
